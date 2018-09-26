@@ -29,13 +29,10 @@ Install all the necessary requirements by running:
 >$ pip install -r requirements.txt (Python 3).
 >$ ./manager.py runserver
 
-##Prerequisites
->Python3.6
-
 ## Technologies  used:
 
+>Python3.6
 -Bootstrap3
--Python3.6
 -CSS
 -django1.11
 -HTML5
