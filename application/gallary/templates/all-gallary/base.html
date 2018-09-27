@@ -17,10 +17,12 @@
   {% endblock %}
 
 </head>
-<body>
+<body style="background-color:indianred">
     {% include "navbar.html" %}
 
-    {% block content %} <marquee><h class='time'>Gallary for {{date|date:"l d-F Y"}}</h></marquee> {%endblock%}
+    {% block content %} 
+
+    {%endblock%}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

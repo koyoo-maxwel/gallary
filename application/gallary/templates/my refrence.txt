@@ -13,3 +13,67 @@
         </form>
       </div> -->
       <!-- search form end -->
+
+
+
+
+
+<!--my modal-->
+{% for gallary_item in gallary %}
+
+<div class="modal fade" id="deleteModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <img src="{{gallary_item.image.url}}" data-target="#deleteModal{{image.id}}"
+        data-toggle="modal" alt="" style="height:600px;width:500px;">
+        <div class="modal-header">
+        <h4 id="modal-text text-center">{{gallary_item.description }}</h4>
+
+
+
+          <!-- <button class="btn btn-lg btn-success" style="color:white;"> #{{ tag.name }}</button> -->
+
+           
+      </div>
+
+      <div class="modal-footer">
+
+        <input class="form-control" type="text" value="{{image.image.url}}" id="thislinkhere">
+        <a onclick="copyLink()"><button type="button"  class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button></a>
+      </div>
+      <div class="modal-footer">
+
+        <h5 id=modal-text>{{image.description}}</h5>
+
+
+
+          <!--<p>{{image.tags.all|join:", "}}</p>-->
+
+        <button type="button" class="btn btn-outline-secondary my-2 my-sm-0" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyLink() {
+/* Get the text field */
+var copyText = document.getElementById("thislinkhere");
+
+/* Select the text field */
+copyText.select();
+
+/* Copy the text inside the text field */
+document.execCommand("copy");
+
+/* Alert the copied text */
+alert("Copied the text: " + copyText.value);
+}
+</script>
+
+
+Message Input
+
+Message koyoomaxwel
+{% endfor%}

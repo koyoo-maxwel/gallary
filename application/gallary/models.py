@@ -1,38 +1,65 @@
 from django.db import models
-import datetime as dt
-# Create your models here.
 
 
-class Editor(models.Model):
-    first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length = 10,blank =True)
-
+# my models .
+class Location(models.Model):
+    name = models.CharField(max_length =60)
+        
     def __str__(self):
-        return self.first_name
+        return self.name
 
-    def save_editor(self):
+    def save_location(self):
         self.save()
 
 
+class Category(models.Model):
+    name = models.CharField(max_length =60)
+        
+    def __str__(self):
+        return self.name
 
-class tags(models.Model):
-    name = models.CharField(max_length =30)
-
-
+    def save_category(self):
+        self.save()
 
 
 class Image(models.Model):
     name = models.CharField(max_length =60)
     description = models.TextField()
-    editor = models.ForeignKey(Editor)
-    tags = models.ManyToManyField(tags)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    image_image = models.ImageField(upload_to = 'images/')
+    location = models.ForeignKey(Location)
+    category =  models.ForeignKey(Category)
+    image = models.ImageField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.name
+
+    def save_image(self):
+        self.save()
+
 
     @classmethod
-    def today_gallary(cls):
-        today = dt.date.today()
-        gallary = cls.objects.filter(name = today)
+    def search_by_name(cls,search_term):
+        gallary = cls.objects.filter(name__icontains=search_term)
         return gallary
+
+    @classmethod
+    def get_image_by_id(cls,id):
+        gallary = cls.objects.get(pk=id)
+        return gallary
+
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        gallary = cls.objects.filter(category__icontains=search_term)
+        return gallary
+
+
+    @classmethod
+    def search_by_location(cls,search_term):
+        gallary = cls.objects.filter(location__icontains=search_term)
+        return gallary
+
+
+
+
+
+

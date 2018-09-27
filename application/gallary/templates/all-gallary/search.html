@@ -1,0 +1,27 @@
+{%extends 'all-gallary/base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if images%}
+      <h2>Found {{ images|length }} of searched for {{message}}</h2>
+    {% else %}
+      <h2> {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if images %}
+    {% for image in images %}
+      <div class="col-sm-6 col-md-3">
+          <img src="{{gallary_item.image.url}}" class="img-responsive" alt="Image">
+          <marquee><h1>{{image.name}}</h1></marquee>
+          
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
