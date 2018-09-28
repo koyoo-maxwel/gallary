@@ -1,27 +1,52 @@
-{%extends 'all-gallary/base.html'%} 
+{%extends 'all-gallary/base.html'%}
 {% block content %}
+
+
 <div class="container">
 
   <div class="row">
     {% if images%}
-      <h2>Found {{ images|length }} of searched for {{message}}</h2>
+    <h2> {{ images|length }}  image found for {{message}}</h2>
+   <marquee> find more images by specifying the category you want.</marquee>
     {% else %}
-      <h2> {{message}}</h2>
-    {% endif %}
+   <div class="container">
+
+      <h1 style="color:green" > {{message}}  couldn't be found.</h1>
+      <p>Did you forget to specify the image category? please search by:</p>
+      <ul>
+      <li><strong>Food </strong></li>
+      <li><strong>Entertainment</strong></li>
+      <li><strong>Travel</strong></li>
+      </ul>
+      
+    
+   </div>
+{% endif %}
 
   </div>
 
-  <div class="row">
+
+
+
 
   {% if images %}
-    {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-          <img src="{{gallary_item.image.url}}" class="img-responsive" alt="Image">
-          <marquee><h1>{{image.name}}</h1></marquee>
-          
+  <div class="row" style="background-color:orangered">
+    {% for img in images %}
+    <div class="col-md-4">
+       <h1>{{img.name}}</h1>
+      <div class="hovereffect">
+        <img src="{{img.image.url}}" class="img-responsive"  height="300px" width="300px">
+        <div class="overlay">
+         
+          <p>{{img.description}}</p>
+        </div>
+        <p>Taken from <strong>{{img.location}}</strong></p>
       </div>
+    </div>
+
     {% endfor %}
-  {% endif %}
   </div>
+  {% endif %}
 </div>
+
 {% endblock %}

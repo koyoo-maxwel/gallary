@@ -77,3 +77,18 @@ Message Input
 
 Message koyoomaxwel
 {% endfor%}
+
+
+
+
+
+# def image(request, category):
+#     try:
+       
+#         image = Image.objects.filter(category=category)
+
+#     except DoesNotExist:
+#         raise Http404()
+
+#     return render(request, 'image.html', {"image": image})
+

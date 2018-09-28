@@ -14,18 +14,19 @@ def search_results(request):
     
     if 'image' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
-        searched_images = Image.search_by_name(search_term)
+        searched_images = Image.search_image_by_name(search_term)
         message = f"{search_term}"
+       
 
         return render(request, 'all-gallary/search.html',{"message":message,"images":searched_images})
 
     else:
         message = "Sorry! couldn't find that image"
 
+
         return render(request, 'all-gallary/search.html',{"message":message})
 
 
 
-def image(request,image_id):
-        image = Image.objects.get_image_by_id(id = image_id)
-        return 'image'
+
+

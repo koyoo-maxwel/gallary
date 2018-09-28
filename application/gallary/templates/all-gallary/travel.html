@@ -1,0 +1,15 @@
+{%extends 'all-gallary/base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+    <div class="row p-0 m-0">
+      {% for gallary_item in gallary %}
+      <div class="col-4">
+        <h1 class="">{{gallary_item.name }}</h1>
+        <img class="w-100" src="{{gallary_item.id}}">
+      </div>
+      {%endfor%}
+    </div>
+
+ {% endblock %}

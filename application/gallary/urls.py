@@ -5,7 +5,6 @@ from . import views
 
 urlpatterns=[
     url('^$',views.today_gallary,name='gallaryToday'),
-    
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^image/(\d+)',views.Image,name ='image')
 

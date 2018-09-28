@@ -1,71 +1,69 @@
 {%extends 'all-gallary/base.html'%}
-{% block content %} 
+{% block content %}
 {{ block.super}}
-
-
 <div class="container">
-  <hr>
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-      {% for gallary_item in gallary %}
-      <h1>{{gallary_item.name }}</h1>
+  <div class="row p-0 m-0">
+    {% for gallary_item in gallary %}
+    <div class="col-4">
+     
+      <img class="w-100" src="{{gallary_item.image.url}}" data-toggle="modal" data-target="#exampleModal{{gallary_item.id}}" height="300px" width="300px">
+      <div class="hover">
+          <h2  style="font-family: Srisakdi;" >{{gallary_item.name }}</h2>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
 
-        <img src="{{gallary_item.image.url}}" class="img-fluid" data-toggle="modal" 
-        data-target="#exampleModal{{gallary_item.id}}">
+  
 
-        {%endfor%}
-          
-        <div class="overlay">
-                   
-      <!--  my Modal -->
+  <!--my modal-->
   {% for gallary_item in gallary %}
-  <div class="modal fade" id="exampleModal{{gallary_item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="exampleModal{{gallary_item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{gallary_item.name }}</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">{{gallary_item.name }}</h5>  
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <img src="{{gallary_item.image.url}}" class="img-fluid" data-toggle="modal" 
-            data-target="#exampleModal{{image.id}}">
-          <p> {{gallary_item.description }}</p><label for="location"> Image location :{{gallary_item.location }}</label>
+          <img src="{{gallary_item.image.url}}" class="img-fluid" data-toggle="modal" data-target="#exampleModal{{image.id}}">
+          <p style="font-family:Srisakdi"> {{gallary_item.description }}</p> Image location :<strong>{{gallary_item.location }}</strong>
+          
 
-        
+
         </div>
         <div class="modal-footer">
-            <input class="form-control" type="text" value="http://127.0.0.1:8000{{gallary_item.image.url}}" id="thislinkhere-{{gallary_item.id}}">
-            <a onclick="copyLink({{gallary_item.id}})"><button type="button"  class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy image Link</button></a>
-            
-          </div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
+
+        
+          <a onclick="copyLink({{gallary_item.id}})"><button type="button" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy image Link</button></a>
+              <input class="form-control" type="text" value="http://127.0.0.1:8000{{gallary_item.image.url}}" id="thislinkhere-{{gallary_item.id}}">
+              <a ></a>
+
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+           
         </div>
+
       </div>
     </div>
-   
-
   </div>
   {% endfor%}
-</div>
-</div>
-</div>
+  
+  <script>
+    function copyLink( id ) {
+      /* Get the text field */
+      var copyText = document.getElementById( "thislinkhere-" + id );
 
-<script>
-    function copyLink(id) {
-     /* Get the text field */
-     var copyText = document.getElementById("thislinkhere-" + id);
-    
-     /* Select the text field */
-     copyText.select();
-    
-     /* Copy the text inside the text field */
-     document.execCommand("copy");
-    
-     /* Alert the copied text */
-     alert("Copied the link: " + copyText.value);
+      /* Select the text field */
+      copyText.select();
+
+      /* Copy the text inside the text field */
+      document.execCommand( "copy" );
+
+      /* Alert the copied text */
+      alert( "Do you want to share this link?: " + copyText.value );
     }
-    </script>
-{%endblock%}
+  </script>
+  {%endblock%}
