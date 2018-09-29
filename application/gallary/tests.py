@@ -18,8 +18,8 @@ class LocationTestClass(TestCase):
 
         self.assertTrue(isinstance(self.test_location, Location))
 
-    #Testing  if the user can save the image
 
+    #Testing  if the user can save the image
     def test_save_method(self):
         locations = Location.objects.all()
         self.assertTrue(len(locations)>0)
