@@ -4,8 +4,19 @@
       <a class="navbar-brand" href="{% url 'gallaryToday' %}">My Gallary</a>
 
     </div>
+    <a class="navbar-content"  style="text-decoration:none" href="/location/Shags">Shags</a>
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </div>
   
-    <div class="col-sm-4 col-md-4 navbar-right">
+    <div class="col-sm-4 col-md-4 navbar-right">       
 
       <form class="form-inline my-2 my-lg-10" role="search" action="{% url 'search_results' %}">
 

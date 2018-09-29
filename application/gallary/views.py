@@ -21,10 +21,19 @@ def search_results(request):
         return render(request, 'all-gallary/search.html',{"message":message,"images":searched_images})
 
     else:
-        message = "Sorry! couldn't find that image"
+        message = "Hiapatikani saizi check later"
 
 
         return render(request, 'all-gallary/search.html',{"message":message})
+
+
+def shags(request,location_name):
+    image = Location.objects.get(name=location_name)
+    x = image.id
+    gallary = Image.objects.filter(location_id=x)
+    return render(request,'all-gallary/location.html',{'gallary':gallary})
+    
+
 
 
 
