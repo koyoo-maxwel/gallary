@@ -1,17 +1,23 @@
 <nav class="navbar navbar-right-lg navbar-light bg-dark" >
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'gallaryToday' %}">My Gallary</a>
+      <a class="navbar-brand" href="{% url 'gallaryToday' %}">Home</a>
 
     </div>
-    <a class="navbar-content"  style="text-decoration:none" href="/location/Shags">Shags</a>
+    <!-- <a class="navbar-content"  style="text-decoration:none" href="/location/Shags">Shags</a> -->
     <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-          Dropdown button
-        </button>
+        <p class="dropdown-toggle" data-toggle="dropdown" style="color:white"> View category</p>
+          
+        
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Link 1</a>
-          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" style="text-decoration:none" href="/location/Shags">Shags</a>
+          <a class="dropdown-item" style="text-decoration:none" href="/location/kisumu">Kisumu</a>          
+          <a class="dropdown-item" style="text-decoration:none" href="/location/Entertainment">Entertainment</a>
+          <a class="dropdown-item" style="text-decoration:none" href="/location/Travel">Travel</a>                 
+          
+          <a class="dropdown-item" href="#">Link 3</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+          <a class="dropdown-item" href="#">Link 3</a>
           <a class="dropdown-item" href="#">Link 3</a>
         </div>
       </div>

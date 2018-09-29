@@ -29,9 +29,32 @@ def search_results(request):
 
 def shags(request,location_name):
     image = Location.objects.get(name=location_name)
-    x = image.id
-    gallary = Image.objects.filter(location_id=x)
+    image = image.id
+    gallary = Image.objects.filter(location_id=image)
     return render(request,'all-gallary/location.html',{'gallary':gallary})
+    
+
+
+def kisumu(request,location_name):
+    image = Location.objects.get(name=location_name)
+    image = image.id
+    gallary = Image.objects.filter(location_id=image)
+    return render(request,'all-gallary/location.html',{'gallary':gallary})
+
+
+def my_best_pics(request,location_name):
+    image = Location.objects.get(name=location_name)
+    image = image.id
+    gallary = Image.objects.filter(location_id=image)
+    return render(request,'all-gallary/location.html',{'gallary':gallary})
+    
+
+def entertainment(request,location_name):
+    image = Location.objects.get(name=location_name)
+    image = image.id
+    gallary = Image.objects.filter(location_id=image)
+    return render(request,'all-gallary/location.html',{'gallary':gallary})
+    
     
 
 
