@@ -28,6 +28,8 @@ class LocationTestClass(TestCase):
     def tearDown(self):
         Location.objects.all().delete()
 
+        
+
         # Testing if a user can delete an image
 
     def test_delete_location(self):
@@ -48,9 +50,6 @@ class ImageTestClass(TestCase):
                                 description='I love testing my code',
                                 location=self.isebania,
                                 )
-
-
-
 
 
 
