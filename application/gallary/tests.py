@@ -28,9 +28,9 @@ class LocationTestClass(TestCase):
     def tearDown(self):
         Location.objects.all().delete()
 
-        
 
-        # Testing if a user can delete an image
+
+        # Testing if a user can delete an image location
 
     def test_delete_location(self):
         self.test_location.delete()
