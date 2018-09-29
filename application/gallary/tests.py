@@ -51,6 +51,10 @@ class ImageTestClass(TestCase):
 
 
 
+
+
+
+
         self.test_image.save()
 
     def test_save_method(self):
