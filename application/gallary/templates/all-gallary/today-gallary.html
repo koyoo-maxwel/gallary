@@ -1,7 +1,7 @@
 {%extends 'all-gallary/base.html'%}
 {% block content %}
 {{ block.super}}
-<div class="container">
+<div class="container" style=" padding-top: 130px; padding-top: 115px;">
   <div class="row p-20 m-3">
     {% for gallary_item in gallary %}
     <div class="col-4">
@@ -10,6 +10,7 @@
       <div class="hover">
           <h2  style="font-family: Srisakdi;" >{{gallary_item.name }}</h2>
       </div>
+     <p> Location <strong> {{gallary_item.location }}</p></strong>
     </div>
     {%endfor%}
   </div>

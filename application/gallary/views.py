@@ -21,7 +21,7 @@ def search_results(request):
         return render(request, 'all-gallary/search.html',{"message":message,"images":searched_images})
 
     else:
-        message = "Hiapatikani saizi check later"
+        message = "That was embarrasing! you haven't searched for anything yet."
 
 
         return render(request, 'all-gallary/search.html',{"message":message})
@@ -50,6 +50,14 @@ def my_best_pics(request,location_name):
     
 
 def entertainment(request,location_name):
+    image = Location.objects.get(name=location_name)
+    image = image.id
+    gallary = Image.objects.filter(location_id=image)
+    return render(request,'all-gallary/location.html',{'gallary':gallary})
+    
+    
+
+def travell(request,location_name):
     image = Location.objects.get(name=location_name)
     image = image.id
     gallary = Image.objects.filter(location_id=image)

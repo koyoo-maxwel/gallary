@@ -92,3 +92,64 @@ Message koyoomaxwel
 
 #     return render(request, 'image.html', {"image": image})
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class ImageTestClass(TestCase):
+    # Set up method
+    def setUp(self):
+
+
+        self.nairobi = Location.objects.create(name="Shags")
+        self.nyumbani= tags.objects.create(name='nyumbani')
+
+
+        self.test_image = Image.objects.create(image='imageslf',
+                                name='Home',
+                                description='Who does not love home'
+                                location=self.Shags,
+                                )
+
+
+
+        self.test_image.save()
+
+    def test_save_method(self):
+        self.test_image.save()
+        test_images = Image.objects.all()
+        self.assertTrue(len(test_images) > 0)
+
+    # Testing save method
+    def test_save_image(self):
+        self.assertEqual(len(Image.objects.all()), 1)
