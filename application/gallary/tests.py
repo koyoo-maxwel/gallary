@@ -44,8 +44,7 @@ class ImageTestClass(TestCase):
         self.travell= category.objects.create(name='travell')
 
 
-        self.test_image = Image.objects.create(image='image_name',
-                                name='name_input',
+        self.test_image = Image.objects.create(image='image_name',name='name_input',
                                 description='I love testing my code',
                                 location=self.isebania,
                                 )
