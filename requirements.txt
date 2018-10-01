@@ -20,3 +20,4 @@ Werkzeug==0.14.1
 wrapt==1.10.11
 zope.interface==4.5.0
 gunicorn==19.9.0
+whitenoise==4.1
