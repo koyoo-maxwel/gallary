@@ -5,27 +5,27 @@
 {% for gallary_item in gallary %}
 
 <div class="container">
-<div class="card" style="max-width: 20em; padding-bottom: 100px; padding-top: 115px; margin-top: 30px">
-        
-        <div class="card-header">
-            <h1>{{gallary_item.name }}</h1>
+  <div class="card" style=" padding-top: 130px; padding-top: 115px;">
 
-            </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <a href='/image/{{image.id}}/' id='image.id'></a>
-          <img style="width: 200px" src="{{gallary_item.image.url}}" alt=""></a>
-          <p class="card-text" style="color:tomato">{{gallary_item.description }}</p>
-          <p> location :{{gallary_item.location }}</p>
-          
-        </div>
-      </div>
-        
-    
-    
-      
+    <div class="card-header">
+      <h1>{{gallary_item.name }}</h1>
+
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <a href='/image/{{image.id}}/' id='image.id'></a>
+      <img style="width: 200px" src="{{gallary_item.image.url}}" alt=""></a>
+      <p class="card-text" style="color:tomato">{{gallary_item.description }}</p>
+      <p> location :{{gallary_item.location }}</p>
+
+    </div>
+  </div>
 
 
-{%endfor%}
 
-{%endblock%}
+
+
+
+  {%endfor%}
+
+  {%endblock%}
