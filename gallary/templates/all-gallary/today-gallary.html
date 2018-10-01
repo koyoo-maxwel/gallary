@@ -6,7 +6,7 @@
     {% for gallary_item in gallary %}
     <div class="col-4">
 
-      <img class="w-100" src="{{gallary_item.image.url}}" data-toggle="modal" data-target="#exampleModal{{gallary_item.id}}"
+      <img class="w-100"  style="hover:" src="{{gallary_item.image.url}}" data-toggle="modal" data-target="#exampleModal{{gallary_item.id}}"
         height="300px" width="300px">
       <div class="hover">
         <h2 style="font-family: Srisakdi;">{{gallary_item.name }}</h2>
