@@ -5,7 +5,6 @@
 {% for gallary_item in gallary %}
 
 <div class="container">
-<<<<<<< HEAD
 <div class="card" style="max-width: 30em; padding-bottom: 100px; padding-top: -115px; margin-top: 90px">
         
         <div class="card-header">
@@ -30,29 +29,3 @@
 {%endfor%}
 
 {%endblock%}
-=======
-  <div class="card" style=" padding-top: 130px; padding-top: 115px;">
-
-    <div class="card-header">
-      <h1>{{gallary_item.name }}</h1>
-
-    </div>
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <a href='/image/{{image.id}}/' id='image.id'></a>
-      <img style="width: 300px;height: 300px" src="{{gallary_item.image.url}}" alt=""></a>
-      <p class="card-text" style="color:tomato">{{gallary_item.description }}</p>
-      <p> location :{{gallary_item.location }}</p>
-
-    </div>
-  </div>
-
-
-
-
-
-
-  {%endfor%}
-
-  {%endblock%}
->>>>>>> 15425f54e012504fa3770c275312316d95e4c259
