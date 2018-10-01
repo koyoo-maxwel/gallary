@@ -5,17 +5,18 @@
   <div class="row p-20 m-3">
     {% for gallary_item in gallary %}
     <div class="col-4">
-     
-      <img class="w-100" src="{{gallary_item.image.url}}" data-toggle="modal" data-target="#exampleModal{{gallary_item.id}}" height="300px" width="300px">
+
+      <img class="w-100" src="{{gallary_item.image.url}}" data-toggle="modal" data-target="#exampleModal{{gallary_item.id}}"
+        height="300px" width="300px">
       <div class="hover">
-          <h2  style="font-family: Srisakdi;" >{{gallary_item.name }}</h2>
+        <h2 style="font-family: Srisakdi;">{{gallary_item.name }}</h2>
       </div>
-     <p> Location <strong> {{gallary_item.location }}</p></strong>
+      <p> Location <strong> {{gallary_item.location }}</p></strong>
     </div>
     {%endfor%}
   </div>
 
-  
+
 
   <!--my modal-->
   {% for gallary_item in gallary %}
@@ -24,34 +25,37 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">{{gallary_item.name }}</h5>  
+          <h5 class="modal-title" id="exampleModalLongTitle">{{gallary_item.name }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <img src="{{gallary_item.image.url}}" style="width:100%;" class="img-fluid" data-toggle="modal" data-target="#exampleModal{{image.id}}">
-          <p style="font-family:Srisakdi"> {{gallary_item.description }}</p> Image location :<strong>{{gallary_item.location }}</strong>
-          
+          <p style="font-family:Srisakdi"> {{gallary_item.description }}</p> Image location :<strong>{{gallary_item.location
+            }}</strong>
+
 
 
         </div>
         <div class="modal-footer">
 
-        
-          <a onclick="copyLink({{gallary_item.id}})"><button type="button" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy image Link</button></a>
-              <input style="display:none" class="form-control" type="text" value="https://koyoogallary.herokuapp.com{{gallary_item.image.url}}" id="thislinkhere-{{gallary_item.id}}">
-              <a ></a>
 
-        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
-           
+          <a onclick="copyLink({{gallary_item.id}})"><button type="button" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy
+              image Link</button></a>
+          <input class="form-control" type="text" value="https://koyoogallary.herokuapp.com{{gallary_item.image.url}}"
+            id="thislinkhere-{{gallary_item.id}}">
+          <a></a>
+
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+
         </div>
 
       </div>
     </div>
   </div>
   {% endfor%}
-  
+
   <script>
     function copyLink( id ) {
       /* Get the text field */
